@@ -1,3 +1,4 @@
+
 Git three states: modified, staged, committed.
 Git three main sections: 
 - working tree (single checkout of a version), 
@@ -83,10 +84,10 @@ $ git log --all   (shows the commit history of all branches)
 $ git log --oneline
 $ git log --oneline -n 5   (to show the last five lines only)
 $ git log --oneline -5   (alternate method to show the last five lines only)
-$ git log -p    (oppure --patch)
+$ git log -p    (or --patch)
 $ git log -p -2
 $ git log --stat
-$ git log --pretty=oneline    (oppure short, full, fuller)
+$ git log --pretty=oneline    (other options are: short, full, fuller)
 $ git log --pretty=format:"%h - %an, %ar : %s    (many other options)
 $ git log --pretty-format:"%h %s" --graph
 $ git log --since=2.weeks (or a date like "2008-01-15" or "2 years 1 day 3 minutes ago")
@@ -94,14 +95,14 @@ $ git log --oneline --graph --all   (to see the commits of all branches in a gra
 $ git log --oneline --decorate --graph --all
 
 
-$ git show <commit-name(first 7 letters)> (differenza tra le ultime due commit)
+$ git show <commit-name(first 7 letters)> (difference between the last two commit)
 
 
 $ git tag   (lists the existing tags in alphabetical order; options -l or --list; with asterisc example: $ git tag -l "v1.8.5*"
 
 
 CONFIG:
-$ git config --list --show-origin    (Git legge la configurazione da file diversi, con --show-origin si vede da quale)
+$ git config --list --show-origin    (Git load the configuration from different files, --show-origin shows from which)
 $ git config --global user.name "Jo Sevenseas"
 $ git config --global user.email josevenseas@world.com
 $ git config user.name "Jo Sevenseas"
