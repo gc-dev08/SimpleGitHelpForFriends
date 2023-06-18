@@ -34,7 +34,7 @@ $ git clone https://<username:password@>github.com/example/example  #sconsigliat
 using GITHUB:
 $ git remote   (to get the list of remote repositories linked to the local repo you are executing the command for)
 $ git remote -v    (to get more info, like the remote repository url)
-$ git remote add <name> <url>   ( example: $ git remote add origin https://github.com/Jo-90291/My01.git )
+$ git remote add <name> <url>   (example: $ git remote add origin https://github.com/Jo-90291/My01.git)
 $ git push <origin> <myDevBranchName>
 
 
@@ -42,7 +42,7 @@ STATUS:
 $ git status
 $ git status --short
 $ git status -s
-(  the following lines show the output of the --short and of the -s option:
+(the following lines show the output of the --short and of the -s option:
  M file1
 MM file2
 A  file3
@@ -50,14 +50,14 @@ M  file4
 ?? file5
 the lefthand column indicates the status of the staging area 
 the right-hand column indicates the status of the working tree
-??: not tracked; A: added; M: modified  )
+??: not tracked; A: added; M: modified)
 
 
 $ git add <filename>
-$ git add <filename>   (ad esempio: git add *.c )
+$ git add <filename>   (ad esempio: git add *.c)
 $ git add *
-$ git reset HEAD <filename>   ( to unstage the file; the command "git status" reminded that before "git restore" was added )
-$ git restore --staged <filename>   ( new command from 2.23 Git version, same as "git reset HEAD" )
+$ git reset HEAD <filename>   (to unstage the file; the command "git status" reminded that before "git restore" was added)
+$ git restore --staged <filename>   (new command from 2.23 Git version, same as "git reset HEAD")
 
 
 TO GET RID OF ALL CHANGES
@@ -66,18 +66,20 @@ types of uncommitted changes that exist in Git are:
 - updated files that have been added to the index or that have not been added yet
 - newly created files that have been added to the index or that have not been added yet
 $ git reset –hard
-$ git clean -fxd   ( after executing the git reset, to get rid of newly created files)
+$ git clean -fxd   (after executing the git reset, to get rid of newly created files)
 
 $ git reset --hard HEAD (if you do not mind changes)
-$ git checkout -f ( when switching branches, proceed even if the index or the working tree differs from HEAD; his is used to throw away local changes )
+$ git checkout -f (when switching branches, proceed even if the index or the working tree differs from HEAD; his is used to throw away local changes)
 
-$ git switch -f <branch-name>   ( -f is short for --force, which is an alias for --discard-changes; new command with Git 2.23, August 2019)
+$ git switch -f <branch-name>   (-f is short for --force, which is an alias for --discard-changes; new command with Git 2.23, August 2019)
 The switch command Proceed even if the index or the working tree differs from HEAD.
 Both the index and working tree are restored to match the switching target.
 
 
 LOG:
-$ git log
+$ git log   (by default "log" command shows only the commit of the current branch)
+$ git log <branchname>   (shows the commit history of the specified branch)
+$ git log --all   (shows the commit history of all branches)
 $ git log --oneline
 $ git log --oneline -n 5   (to show the last five lines only)
 $ git log --oneline -5   (alternate method to show the last five lines only)
@@ -92,7 +94,7 @@ $ git log --oneline --graph --all   (to see the commits of all branches in a gra
 $ git log --oneline --decorate --graph --all
 
 
-$ git show <commit-name(first 7 letters> (differenza tra le ultime due commit)
+$ git show <commit-name(first 7 letters)> (differenza tra le ultime due commit)
 
 
 $ git tag   (lists the existing tags in alphabetical order; options -l or --list; with asterisc example: $ git tag -l "v1.8.5*"
@@ -143,6 +145,7 @@ $ git branch <branch-name>   (creates a new branch)
 $ git branch <branch-name> -b  (creates a new branch and switches to the new branch thanks to the -b option)
 $ git checkout <branch-name>   (switches to the branch)
 $ git branch -d <branch-name>   (deletes a branch)
+$ git branch -D <branch-name>   (forces a branch delete )
 
 
 STASHING
@@ -151,5 +154,4 @@ $ git stash push
 $ git stash list
 $ git stash show
 $ git stash pop
-
 
