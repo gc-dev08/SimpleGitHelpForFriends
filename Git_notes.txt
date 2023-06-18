@@ -1,4 +1,12 @@
- 
+Git three states: modified, staged, committed.
+Git three main sections: 
+- working tree (single checkout of a version), 
+- staging area (a file that stores informations about what will go into the next commit),
+- Git directory (where metadata and objects of the project versions are stored)
+
+The command line is the only place you can run every Git command
+
+
 Cloning a repository from GitHub using the command line
 -------------------------------------------------------
 - Open GitHub and go to the GitHub repository that you want to clone.
@@ -6,8 +14,16 @@ Cloning a repository from GitHub using the command line
 - Open “Git Bash” and change the current working directory to the location where you want the cloned directory.
 - Type git clone in the terminal, paste the URL you copied earlier, and press “enter” to create your local clone.
 
+
+HELP:
+$ git <command> -h    (opens in che COMMAND LINE a concise help page)
+$ git help <command>   (opens a local help html file in the default internet browser)
+$ git <command> --help    (opens a local help html file in the default internet browser)
+
+
 TO TEST IF GIT IS ON and to CHECK the VERSION:
 $ git --version
+
 
 $ git init
 $ git clone https://github.com/example/example
@@ -16,7 +32,7 @@ $ git clone https://<username:password@>github.com/example/example  #sconsigliat
 
 
 using GITHUB:
-$ git remote   (to get the list of remote repositoriies linked to the local repo you are executing the command for)
+$ git remote   (to get the list of remote repositories linked to the local repo you are executing the command for)
 $ git remote -v    (to get more info, like the remote repository url)
 $ git remote add <name> <url>   ( example: $ git remote add origin https://github.com/Jo-90291/My01.git )
 $ git push <origin> <myDevBranchName>
@@ -37,6 +53,29 @@ the right-hand column indicates the status of the working tree
 ??: not tracked; A: added; M: modified  )
 
 
+$ git add <filename>
+$ git add <filename>   (ad esempio: git add *.c )
+$ git add *
+$ git reset HEAD <filename>   ( to unstage the file; the command "git status" reminded that before "git restore" was added )
+$ git restore --staged <filename>   ( new command from 2.23 Git version, same as "git reset HEAD" )
+
+
+TO GET RID OF ALL CHANGES
+-------------------------
+types of uncommitted changes that exist in Git are:
+- updated files that have been added to the index or that have not been added yet
+- newly created files that have been added to the index or that have not been added yet
+$ git reset –hard
+$ git clean -fxd   ( after executing the git reset, to get rid of newly created files)
+
+$ git reset --hard HEAD (if you do not mind changes)
+$ git checkout -f ( when switching branches, proceed even if the index or the working tree differs from HEAD; his is used to throw away local changes )
+
+$ git switch -f <branch-name>   ( -f is short for --force, which is an alias for --discard-changes; new command with Git 2.23, August 2019)
+The switch command Proceed even if the index or the working tree differs from HEAD.
+Both the index and working tree are restored to match the switching target.
+
+
 LOG:
 $ git log
 $ git log --oneline
@@ -55,19 +94,8 @@ $ git log --oneline --decorate --graph --all
 
 $ git show <commit-name(first 7 letters> (differenza tra le ultime due commit)
 
+
 $ git tag   (lists the existing tags in alphabetical order; options -l or --list; with asterisc example: $ git tag -l "v1.8.5*"
-
-
-
-
-Git three states: modified, staged, committed.
-Git three main sections: 
-- working tree (single checkout of a version), 
-- staging area (a file that stores informations about what will go into the next commit),
-- Git directory (where metadata and objects of the project versions are stored)
-
-
-The command line is the only place you can run every Git command
 
 
 CONFIG:
@@ -83,13 +111,6 @@ $ git config --unset <varname>   (to remove the variable whose name is <varname>
 $ git config global init.defaultBranch myBranchMain (per creare la default branch con nome diverso da master, quando si crea un nuovo repository)
 
 
-HELP:
-$ git <command> -h    (opens in che COMMAND LINE a concise help page)
-$ git help <command>   (opens a local help html file in the default internet browser)
-$ git <command> --help    (opens a local help html file in the default internet browser)
-
-
-$ git add <filename>   (ad esempio: git add *.c )
 $ git commit
 $ git commit -m "Messaggio di esempio per la commit"
 $ git commit -v
