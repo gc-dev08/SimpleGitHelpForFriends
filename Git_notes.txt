@@ -1,1 +1,134 @@
  
+Cloning a repository from GitHub using the command line
+-------------------------------------------------------
+- Open GitHub and go to the GitHub repository that you want to clone.
+- Click “Code” and copy the given URL.
+- Open “Git Bash” and change the current working directory to the location where you want the cloned directory.
+- Type git clone in the terminal, paste the URL you copied earlier, and press “enter” to create your local clone.
+
+TO TEST IF GIT IS ON and to CHECK the VERSION:
+$ git --version
+
+$ git init
+$ git clone https://github.com/example/example
+$ git clone https://<username@>github.com/example/example
+$ git clone https://<username:password@>github.com/example/example  #sconsigliato, per non dover rivelare la password
+
+
+using GITHUB:
+$ git remote   (to get the list of remote repositoriies linked to the local repo you are executing the command for)
+$ git remote -v    (to get more info, like the remote repository url)
+$ git remote add <name> <url>   ( example: $ git remote add origin https://github.com/Jo-90291/My01.git )
+$ git push <origin> <myDevBranchName>
+
+
+STATUS:
+$ git status
+$ git status --short
+$ git status -s
+(  the following lines show the output of the --short and of the -s option:
+ M file1
+MM file2
+A  file3
+M  file4
+?? file5
+the lefthand column indicates the status of the staging area 
+the right-hand column indicates the status of the working tree
+??: not tracked; A: added; M: modified  )
+
+
+LOG:
+$ git log
+$ git log --oneline
+$ git log --oneline -n 5   (to show the last five lines only)
+$ git log --oneline -5   (alternate method to show the last five lines only)
+$ git log -p    (oppure --patch)
+$ git log -p -2
+$ git log --stat
+$ git log --pretty=oneline    (oppure short, full, fuller)
+$ git log --pretty=format:"%h - %an, %ar : %s    (many other options)
+$ git log --pretty-format:"%h %s" --graph
+$ git log --since=2.weeks (or a date like "2008-01-15" or "2 years 1 day 3 minutes ago")
+$ git log --oneline --graph --all   (to see the commits of all branches in a graph)
+$ git log --oneline --decorate --graph --all
+
+
+$ git show <commit-name(first 7 letters> (differenza tra le ultime due commit)
+
+$ git tag   (lists the existing tags in alphabetical order; options -l or --list; with asterisc example: $ git tag -l "v1.8.5*"
+
+
+
+
+Git three states: modified, staged, committed.
+Git three main sections: 
+- working tree (single checkout of a version), 
+- staging area (a file that stores informations about what will go into the next commit),
+- Git directory (where metadata and objects of the project versions are stored)
+
+
+The command line is the only place you can run every Git command
+
+
+CONFIG:
+$ git config --list --show-origin    (Git legge la configurazione da file diversi, con --show-origin si vede da quale)
+$ git config --global user.name "Jo Sevenseas"
+$ git config --global user.email josevenseas@world.com
+$ git config user.name "Jo Sevenseas"
+$ git config user.email josevenseas@world.com
+$ git config --global core.editor notepad.exe
+$ git config core.editor notepad.exe
+$ git config --unset <varname>   (to remove the variable whose name is <varname>)
+
+$ git config global init.defaultBranch myBranchMain (per creare la default branch con nome diverso da master, quando si crea un nuovo repository)
+
+
+HELP:
+$ git <command> -h    (opens in che COMMAND LINE a concise help page)
+$ git help <command>   (opens a local help html file in the default internet browser)
+$ git <command> --help    (opens a local help html file in the default internet browser)
+
+
+$ git add <filename>   (ad esempio: git add *.c )
+$ git commit
+$ git commit -m "Messaggio di esempio per la commit"
+$ git commit -v
+$ git commit -a    (Option to add to the commit all the modified files, skipping the adding to stage part with git add)
+
+$ git commit --amend   (annulla l'ultima commit)
+
+
+MERGE:
+$ git merge <branch-name>
+$ git merge --squash --ff-only   !!!
+
+
+.gitignore (invisible text file to list the files not to be tracked)
+
+
+$ git diff            (differenza tra working directory e staging area)
+$ git diff --staged   (or --chached , compares the staged changes to last commit)
+$ git diff HEAD       (differenza tra working directory e ultima commit)
+
+$ git rm            (to remove a file from tracking)
+$ git rm --cached   (to remove a file from staging)
+
+$ git mv <filenamefrom> <filenameto>
+
+
+BRANCHES
+$ git branch   (lists all the branches)
+$ git branch <branch-name>   (creates a new branch)
+$ git branch <branch-name> -b  (creates a new branch and switches to the new branch thanks to the -b option)
+$ git checkout <branch-name>   (switches to the branch)
+$ git branch -d <branch-name>   (deletes a branch)
+
+
+STASHING
+$ git stash
+$ git stash push
+$ git stash list
+$ git stash show
+$ git stash pop
+
+
