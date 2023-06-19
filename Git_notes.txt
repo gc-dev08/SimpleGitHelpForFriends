@@ -119,7 +119,7 @@ $ git commit -m "Messaggio di esempio per la commit"
 $ git commit -v
 $ git commit -a    (Option to add to the commit all the modified files, skipping the adding to stage part with git add)
 
-$ git commit --amend   (annulla l'ultima commit)
+$ git commit --amend   (if you want to redo the last commit)
 
 
 MERGE:
@@ -143,7 +143,7 @@ $ git mv <filenamefrom> <filenameto>
 BRANCHES
 $ git branch   (lists all the branches)
 $ git branch <branch-name>   (creates a new branch)
-$ git branch <branch-name> -b  (creates a new branch and switches to the new branch thanks to the -b option)
+$ git branch <branch-name> -b   (creates a new branch and switches to the new branch thanks to the -b option)
 $ git checkout <branch-name>   (switches to the branch)
 $ git branch -d <branch-name>   (deletes a branch)
 $ git branch -D <branch-name>   (forces a branch delete )
